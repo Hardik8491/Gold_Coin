@@ -2583,5 +2583,6 @@ For detailed privacy policy: [goldcoin.app/privacy](https://goldcoin.app/privacy
   
   <p><em>Making personal finance management intelligent, engaging, and accessible for everyone.</em></p>
 </div>
-#   G o l d _ C o i n  
+#   G o l d _ C o i n 
+ 
  
