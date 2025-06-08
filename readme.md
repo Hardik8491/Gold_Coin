@@ -14,7 +14,7 @@
   <p>A comprehensive personal finance management platform with AI insights, real-time analytics, gamification, and seamless bank integration.</p>
 </div>
 
----
+
 
 
 
