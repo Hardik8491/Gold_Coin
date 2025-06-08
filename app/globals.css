@@ -1,0 +1,412 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-success-foreground {
+    color: hsl(var(--success-foreground));
+  }
+  .text-warning-foreground {
+    color: hsl(var(--warning-foreground));
+  }
+  .text-info-foreground {
+    color: hsl(var(--info-foreground));
+  }
+}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Updated primary color to gold theme */
+    --primary: 43 96% 56%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Updated secondary color */
+    --secondary: 43 30% 96%;
+    --secondary-foreground: 43 60% 25%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    /* Updated accent color */
+    --accent: 43 100% 50%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Updated border color */
+    --border: 43 30% 90%;
+    --input: 43 30% 90%;
+    --ring: 43 96% 56%;
+
+    /* Updated chart colors */
+    --chart-1: 43 96% 56%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 27 87% 67%;
+    --chart-5: 43 74% 66%;
+
+    --radius: 0.75rem;
+
+    /* Updated sidebar colors */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 43 30% 96%;
+    --sidebar-accent-foreground: 43 60% 25%;
+    --sidebar-border: 43 30% 90%;
+    --sidebar-ring: 43 96% 56%;
+
+    /* New gradient colors */
+    --gradient-start: 43 96% 56%;
+    --gradient-end: 27 87% 67%;
+
+    /* New success colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+
+    /* New warning colors */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    /* New info colors */
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 98%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Updated primary color for dark mode */
+    --primary: 43 96% 56%;
+    --primary-foreground: 240 5.9% 10%;
+
+    /* Updated secondary color for dark mode */
+    --secondary: 43 30% 15%;
+    --secondary-foreground: 43 96% 56%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    /* Updated accent color for dark mode */
+    --accent: 43 100% 50%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Updated border color for dark mode */
+    --border: 43 30% 15%;
+    --input: 43 30% 15%;
+    --ring: 43 96% 56%;
+
+    /* Updated chart colors for dark mode */
+    --chart-1: 43 96% 56%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Updated sidebar colors for dark mode */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 43 30% 15%;
+    --sidebar-accent-foreground: 43 96% 56%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 43 96% 56%;
+
+    /* New gradient colors for dark mode */
+    --gradient-start: 43 96% 56%;
+    --gradient-end: 27 87% 67%;
+
+    /* New success colors for dark mode */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+
+    /* New warning colors for dark mode */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    /* New info colors for dark mode */
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom animations for financial data */
+@keyframes pulse-green {
+  0%,
+  100% {
+    @apply bg-success/20;
+  }
+  50% {
+    @apply bg-success/30;
+  }
+}
+
+@keyframes pulse-red {
+  0%,
+  100% {
+    @apply bg-destructive/20;
+  }
+  50% {
+    @apply bg-destructive/30;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-red {
+  animation: pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Gradient backgrounds for cards */
+.gradient-card {
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-end)) 100%);
+}
+
+.gold-text {
+  background: linear-gradient(135deg, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-end)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Financial chart styling */
+.recharts-tooltip-content {
+  @apply bg-card border border-border rounded-lg shadow-lg;
+}
+
+.recharts-legend-wrapper {
+  @apply text-muted-foreground;
+}
+
+/* New badge styles */
+.badge-premium {
+  @apply bg-gradient-to-r from-amber-500 to-yellow-300 text-black font-medium;
+}
+
+.badge-success {
+  @apply bg-success text-success-foreground;
+}
+
+.badge-warning {
+  @apply bg-warning text-warning-foreground;
+}
+
+.badge-info {
+  @apply bg-info text-info-foreground;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-300;
+}
+
+.hover-card:hover {
+  @apply shadow-lg transform -translate-y-1;
+}
+
+/* Shimmer effect for premium elements */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  @apply bg-white/30 dark:bg-black/30 backdrop-blur-md border border-white/20 dark:border-white/10;
+}
+
+/* New button styles */
+.btn-gold {
+  @apply bg-gradient-to-r from-amber-500 to-yellow-300 text-black font-medium hover:from-amber-600 hover:to-yellow-400 transition-all duration-300;
+}
+
+/* Stat card styles */
+.stat-card {
+  @apply rounded-xl border p-4 hover:shadow-md transition-all duration-300;
+}
+
+/* Progress bar styles */
+.progress-bar-container {
+  @apply h-2 rounded-full bg-muted overflow-hidden;
+}
+
+.progress-bar-fill {
+  @apply h-full rounded-full transition-all duration-500 ease-out;
+}
+
+/* Notification dot */
+.notification-dot {
+  @apply absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive;
+}
+
+/* Premium content highlight */
+.premium-highlight {
+  @apply border-2 border-amber-500/50 dark:border-amber-400/30;
+}
+
+/* Tooltip custom styles */
+.custom-tooltip {
+  @apply p-2 bg-popover text-popover-foreground text-xs rounded-md shadow-lg border z-50;
+}
+
+/* Custom focus styles */
+.custom-focus {
+  @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+}
+
+/* Coin animation */
+.coin-spin {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* New table styles */
+.table-modern {
+  @apply w-full border-collapse;
+}
+
+.table-modern th {
+  @apply p-3 text-left bg-muted text-muted-foreground font-medium text-sm;
+}
+
+.table-modern td {
+  @apply p-3 border-t;
+}
+
+.table-modern tr:hover {
+  @apply bg-muted/50;
+}
+
+/* Dashboard grid layout */
+.dashboard-grid {
+  @apply grid gap-4 md:grid-cols-3 lg:grid-cols-4;
+}
+
+.dashboard-grid-main {
+  @apply md:col-span-2 lg:col-span-3 space-y-4;
+}
+
+.dashboard-grid-sidebar {
+  @apply space-y-4;
+}
+
+/* New card header style */
+.card-header-premium {
+  @apply border-b border-amber-200 dark:border-amber-800 bg-amber-50/50 dark:bg-amber-900/20 rounded-t-xl;
+}
+
+/* Improved form styles */
+.form-group {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply text-sm font-medium;
+}
+
+.form-input {
+  @apply rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+}
+/* New alert styles */
+.alert-success {
+  @apply bg-success/20 text-[hsl(var(--success-foreground))] border-success/30 rounded-lg p-4;
+}
+
+.alert-warning {
+  @apply bg-warning/20 text-[hsl(var(--warning-foreground))] border-warning/30 rounded-lg p-4;
+}
+
+.alert-info {
+  @apply bg-info/20 text-[hsl(var(--info-foreground))] border-info/30 rounded-lg p-4;
+}
+
+.alert-error {
+  @apply bg-destructive/20 text-destructive-foreground border-destructive/30 rounded-lg p-4;
+}

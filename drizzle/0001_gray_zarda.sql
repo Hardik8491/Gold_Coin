@@ -1,0 +1,1 @@
+ALTER TABLE "gamification" ALTER COLUMN "streaks" SET DEFAULT '{"current":0,"longest":0,"type":"daily","lastActivity":"2025-06-08T03:34:10.422Z"}'::jsonb;
